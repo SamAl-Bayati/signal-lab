@@ -5,6 +5,10 @@ export const apiClient = axios.create({
   baseURL: ENV.API_BASE_URL,
 });
 
-export function pingBackend() {
-  return apiClient.get("/health");
+export function fetchSampleDatasets() {
+  return apiClient.get("/api/signal/datasets");
+}
+
+export function fetchDatasetById(id) {
+  return apiClient.get(`/api/signal/datasets/${id}`);
 }
